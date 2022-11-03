@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<div class="login-form">
+  <form>
+    <h1>Register</h1>
+    <div class="content">
+      <div class="input-field">
+        <input type="Name" placeholder="Name" autocomplete="nope">
+      </div>
+      <div class="input-field">
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+      </div>
+      <div class="input-field">
+        <input type="email" placeholder="Email" autocomplete="email">
+      </div>
+      <div class="input-field">
+        <input type="tel" id="phone" name="phone" placeholder="Phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+      </div>
+      <div class="input-field">
+        <input type="password" placeholder="Password" autocomplete="new-password">
+      </div>
+      <div class="input-field">
+        <input type="password" placeholder="Confirm-Password" autocomplete="new-password">
+      </div>
+      <label for="gender">Gender:</label>
+      <div class="">
+        <input type="radio" id="male" name="gender" value="Male" />
+        <label for="gender">Male</label>
+  
+        <input type="radio" id="female" name="gender" value="Female" />
+        <label for="gender">Female</label>
+  
+        <input type="radio" id="other" name="gender" value="Other" />
+        <label for="gender">Other</label>
+      </div>
+      <a href="login.html" class="link">Sign-in</a>
+    </div>
+    <div class="action">
+      <a href="login.html">Create</a>
+      <input type="reset">
+    </div>
+  </form>
+</div>
+</body>
+</html>
