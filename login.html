@@ -13,18 +13,11 @@
 </style>
 </head>
 <body>  <br><br><br>
-  <center>
-  <b>what we include</b>
-<ol>
-  <li>Gooming</li>
-  <li>Pet item</li>
-  <li>Buying</li>
-</ol>
-</center>
-
+ 
 <div class="login-form">
   <form>
-    <h1>Login</h1>
+    <fieldset>
+      <legend style="font-size: 30px ;">Login</legend>
     <div class="content">
       <div class="input-field">
         <input type="email" placeholder="Email" autocomplete="nope">
@@ -38,9 +31,64 @@
       <a href="register.html">Register</a>
       <a href="lab1.html">Sign in</a>
     </div>
+    </fieldset>
+    
   </form>
 </div>
+<center> 
+<video muted controls src="video/pet1.mp4"> </video>
+<br>
+<button onclick="getlocation();"> Show user location</button>   
+        <div id="demo" style="width: 600px; height: 400px;"></div>   
+         
+        <script src="https://maps.google.com/maps/api/js?sensor=false"> </script>   
+          
+        <script type="text/javascript">   
+        function getlocation(){   
+            if(navigator.geolocation){   
+                navigator.geolocation.getCurrentPosition(showPos, showErr);   
+            }  
+            else{  
+                alert("Sorry! your Browser does not support Geolocation API")  
+            }  
+        }   
+        //Showing Current Poistion on Google Map  
+        function showPos(position){   
+            latt = position.coords.latitude;   
+            long = position.coords.longitude;   
+            var lattlong = new google.maps.LatLng(latt, long);   
+            var myOptions = {   
+                center: lattlong,   
+                zoom: 15,   
+                mapTypeControl: true,   
+                navigationControlOptions: {style:google.maps.NavigationControlStyle.SMALL}   
+            }   
+            var maps = new google.maps.Map(document.getElementById("demo"), myOptions);   
+            var markers =   
+            new google.maps.Marker({position:lattlong, map:maps, title:"You are here!"});   
+        }   
+  
+        //Handling Error and Rejection  
+             function showErr(error) {  
+              switch(error.code){  
+              case error.PERMISSION_DENIED:  
+             alert("User denied the request for Geolocation API.");  
+              break;  
+             case error.POSITION_UNAVAILABLE:  
+             alert("USer location information is unavailable.");  
+            break;  
+            case error.TIMEOUT:  
+            alert("The request to get user location timed out.");  
+            break;  
+           case error.UNKNOWN_ERROR:  
+            alert("An unknown error occurred.");  
+            break;  
+           }  
+        }        
+        </script>   
 
+ 
+</center>
 
 </body>
 </html>
