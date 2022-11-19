@@ -1,0 +1,11 @@
+pet_store
+{  
+background-color: pink;  
+}  
+name,breed,discription,age,quantity,price,availability,store  
+{  
+font-size:25px;  
+display:block;  
+color: blue;  
+margin-left: 50px;  
+}   

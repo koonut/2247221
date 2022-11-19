@@ -1,0 +1,12 @@
+<!DOCTYPE pet_store
+[
+<!ELEMENT pet_store (name,breed,discription,age,quantity,price,availability,store)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT breed (#PCDATA)>
+<!ELEMENT discription (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT availability (#PCDATA)>
+<!ELEMENT store (#PCDATA)>
+]>

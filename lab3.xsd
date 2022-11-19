@@ -1,0 +1,22 @@
+<?xml version="1.0"?>  
+<xs:schema xmlns="urn:schemas-microsoft-com:xml-data" xmlns:dt="urn:schemas-microsoft-com:datatypes">  
+  
+<xs:element name="pet_store">
+    <xs:element name="pet">  
+        <xs:complexType>  
+        <xs:sequence>  
+            <xs:element name="name" type="xs:string"/>  
+            <xs:element name="breed" type="xs:string"/>  
+            <xs:element name="discription" type="xs:string"/>  
+            <xs:element name="age" type="xs:number"/>  
+            <xs:element name="quantity" type="xs:number"/>  
+            <xs:element name="price" type="xs:string"/>
+            <xs:element name="availability" type="xs:string"/>  
+            <xs:element name="store" type="xs:string"/>
+        </xs:sequence>  
+        </xs:complexType>  
+    </xs:element>
+</xs:element>  
+  
+</xs:schema>  
+

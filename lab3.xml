@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="lab3.css"?>
+<!DOCTYPE pet_store SYSTEM "lab3.dtd">
+<pet_store xmlns="lab3.xsd">
+    <pet category="Dog">
+        <name>egg</name>
+        <breed>dog</breed>
+        <discription>golden</discription>
+        <age>3 month</age>
+        <quantity>4</quantity>
+        <price>7500</price>
+        <availability>available</availability>
+        <store>XYZ</store>
+    </pet>
+    <pet category="Dog">
+        <name>lucky</name>
+        <breed>dog</breed>
+        <discription>labrador</discription>
+        <age>1 month</age>
+        <quantity>2</quantity>
+        <price>8000</price>
+        <availability>available</availability>
+        <store>ZYX</store>
+    </pet>
+
+</pet_store>
