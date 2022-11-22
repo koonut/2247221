@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="lab3.css"?>
+<course xmlns="http://www.example.org/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.example.org/sample sample.xsd">
+    <student>
+        <name>Raj</name>
+        <regno>10</regno>
+        <class>bca</class>
+    </student>
+
+
+</course>
