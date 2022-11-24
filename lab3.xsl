@@ -4,11 +4,15 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:template match="/">
   <html>
+    <head>
+      <title>pet shop</title>
+    </head>
   <body>
+    <center>
     <h2>Store</h2>
     <table border="1">
       <tr bgcolor="#9acd32">
-        <th>pet</th>
+        <th>pet name</th>
         <th>breed</th>
         <th>price</th>
         <th>availability</th>
@@ -23,6 +27,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       </tr>
       </xsl:for-each>
     </table>
+    </center>
   </body>
   </html>
 </xsl:template>
