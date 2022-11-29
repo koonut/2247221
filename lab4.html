@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <p id="demo"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET", "lab3.xml", true);
+            xhttp.send();
+
+            function myFunction(xml)
+            {
+                var xmlDoc = xml.responseXML;
+                var root = xmlDoc.documentElement;
+                var x=xmlDoc.getElementsByTagName("breed")[0].childNodes[0];
+                document.getElementById("demo").innerHTML="Current node: "+x.nodeValue;
+
+                var currNode = root.childNodes[1];
+                removedNode = currNode.removeChild(currNode.childNodes[1]);
+                document.getElementById("demo2").innerHTML ="Removed node: " + removedNode.nodeName;
+
+                var x;
+                x = xmlDoc.getElementsByTagName("name")[0].childNodes[0];
+                document.getElementById("demo3").innerHTML = "name before change: "+x.nodeValue;
+                x.nodeValue = "teddy";
+                x = xmlDoc.getElementsByTagName("name")[0].childNodes[0];
+                document.getElementById("demo4").innerHTML ="name after change: "+ x.nodeValue;
+
+
+                var x, i, xmlDoc, txt;
+                xmlDoc = xml.responseXML;
+                txt = "";
+                x = xmlDoc.documentElement.childNodes;
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].nodeType == 1) {
+                        txt += x[i].nodeName + "<br>";
+                    }
+                }
+                document.getElementById("demo5").innerHTML ="Traverse: <br>"+  txt; 
+            }
+        </script>
+
+    </body>
+
+</html>

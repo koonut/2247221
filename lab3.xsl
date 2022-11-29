@@ -6,11 +6,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <html>
     <head>
       <title>pet shop</title>
+      <link rel="stylesheet" type="text/css" href="lab3-1.css"></link>
     </head>
   <body>
     <center>
+      <div id="wrapper">
     <h2>Store</h2>
-    <table border="1">
+        <table border="1" class="rtable">
       <tr bgcolor="#9acd32">
         <th>pet name</th>
         <th>breed</th>
@@ -27,6 +29,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       </tr>
       </xsl:for-each>
     </table>
+    </div>
     </center>
   </body>
   </html>
