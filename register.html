@@ -10,6 +10,12 @@
   background-repeat : no-repeat;
    background-size : 125% 150%;  
 }
+span {
+                display: block;
+                margin-left: 20px;
+                color: red;
+                font-style: italic;
+            }
 </style>
 </head>
 <body>
@@ -19,39 +25,52 @@
     <legend style="font-size:30px">Register</legend>
     <div class="content">
       <div class="input-field">
-        <input type="Name" placeholder="Name" autocomplete="nope">
+        <input type="text" placeholder="Name" autocomplete="none" required id="nam">
+        <span></span>
       </div>
       <div class="input-field">
         <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" name="birthday">
+        <input type="date" id="birthday" name="birthday" required>
       </div>
       <div class="input-field">
-        <input type="email" placeholder="Email" autocomplete="email">
+        <input type="email" placeholder="Email" autocomplete="email" required id="email">
+        <span></span>
       </div>
       <div class="input-field">
-        <input type="tel" id="phone" name="phone" placeholder="Phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+        <input type="tel" id="phone" name="phone" placeholder="Phone" required id="phone">
+        <span></span>
       </div>
       <div class="input-field">
-        <input type="password" placeholder="Password" autocomplete="new-password">
+        <input type="password" placeholder="Password" autocomplete="new-password" required>
+        <span></span>
       </div>
       <div class="input-field">
-        <input type="password" placeholder="Confirm-Password" autocomplete="new-password">
+        <input type="password" placeholder="Confirm-Password" autocomplete="new-password" required>
+        <span></span>
       </div>
       <label for="gender">Gender:</label>
-      <div class="">
+      <div class="input-field">
+      </div>
         <input type="radio" id="male" name="gender" value="Male" />
         <label for="gender">Male</label>
-  
+
         <input type="radio" id="female" name="gender" value="Female" />
         <label for="gender">Female</label>
   
         <input type="radio" id="other" name="gender" value="Other" />
         <label for="gender">Other</label>
-      </div>
-      <a href="login.html" class="link" >Sign-in</a>
+
+      
     </div>
+    <center>
+      <a href="login.html" class="link" >Sign-in</a>
+    </center>
+     
+    
+    
     <div class="action">
-      <a href="login.html">Create</a>
+      <input type="submit" value="Create" onclick="validate()">
+      <!-- <a href="login.html">Create</a> -->
       <input type="reset">
     </div></fieldset>
     
@@ -59,3 +78,44 @@
 </div>
 </body>
 </html>
+<script>
+    var nam = document.getElementById('nam');
+    var email = document.getElementById('email');
+    var number = document.getElementById('number');
+    var span = document.getElementsByTagName('span');
+    nam.onkeydown = function () {
+      const regName = /^[a-zA-Z]$/;
+      if (regName.test(nam.value)) {
+        span[0].innerText = "Your Name is Valid";
+        span[0].style.color = "lime";
+      }
+      else {
+        span[0].innerText = "Invalid Name";
+        span[0].style.color = "red";
+      }
+    }
+    email.onkeydown = function () {
+      const regex1 = /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})$/;
+      const regex2 = /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
+      if (regex1.test(email.value) || regex2.test(email.value)) {
+        span[1].innerText = "Your Email is Valid";
+        span[1].style.color = "lime";
+      }
+      else {
+        span[1].innerText = "Invalid Email Id";
+        span[1].style.color = "red";
+      }
+    }
+    number.onkeydown=function()
+    {
+      const regnum = /^[0-9]{10}$/;
+      if (regnum.test(number.value)) {
+        span[2].innerText = "Your Number is Valid";
+        span[2].style.color = "lime";
+      }
+      else {
+        span[2].innerText = "Invalid Phone Number";
+        span[2].style.color = "red";
+      }
+    }
+</script>
