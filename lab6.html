@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <input type="button" value="Set Cookies" onclick="setCookie()">
+        <input type="button" value="Get Cookies" onclick="getCookie()">
+        <script>
+            function setCookie() {
+
+            }
+            function getCookie() {
+                if (document.cookie.length != 0) {
+                    alert(document.cookie);
+                }
+                else {
+                    alert("No cookies");
+                }
+            }
+
+        </script>
+    </body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <select id="demo" onchange="show()">
+            <option value="Select Color">Select Color</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <script>
+            function show() {
+                var value = document.getElementById("demo").value;
+                if (value != "Select Color") {
+                    document.bgColor = value;
+                    document.cookie = "color=" + value + ";";
+                }
+            }
+            window.onload = function () {
+                if (document.cookie.length != 0) {
+                    var a = document.cookie.split("=");
+                    document.getElementById("demo").value = a[1];
+                    document.bgColor = a[1];
+                }
+            }
+        </script>
+    </body>
+
+</html>
