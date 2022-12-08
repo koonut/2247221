@@ -41,11 +41,11 @@ span {
         <span></span>
       </div>
       <div class="input-field">
-        <input type="password" placeholder="Password" autocomplete="new-password" required>
+        <input type="password" placeholder="Password" autocomplete="new-password" required id="pas">
         <span></span>
       </div>
       <div class="input-field">
-        <input type="password" placeholder="Confirm-Password" autocomplete="new-password" required>
+        <input type="password" placeholder="Confirm-Password" autocomplete="new-password" required id="conpas">
         <span></span>
       </div>
       <label for="gender">Gender:</label>
@@ -81,10 +81,12 @@ span {
 <script>
     var nam = document.getElementById('nam');
     var email = document.getElementById('email');
-    var number = document.getElementById('number');
+    var phone = document.getElementById('phone');
+    var pas=document.getElementById('pas')
+    var conpas=document.getElementById('conpas')
     var span = document.getElementsByTagName('span');
     nam.onkeydown = function () {
-      const regName = /^[a-zA-Z]$/;
+      const regName = /^([a-zA-Z]{4,15})$/;
       if (regName.test(nam.value)) {
         span[0].innerText = "Your Name is Valid";
         span[0].style.color = "lime";
@@ -106,10 +108,10 @@ span {
         span[1].style.color = "red";
       }
     }
-    number.onkeydown=function()
+    phone.onkeydown=function()
     {
-      const regnum = /^[0-9]{10}$/;
-      if (regnum.test(number.value)) {
+      const phonum = /^[0-9]{8,10}$/;
+      if (phonum.test(phone.value)) {
         span[2].innerText = "Your Number is Valid";
         span[2].style.color = "lime";
       }
@@ -118,4 +120,32 @@ span {
         span[2].style.color = "red";
       }
     }
+    pas.onkeydown=function()
+    {
+      const pasVa= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+      if(pasVa.test(pas.value))
+      {
+        span[3].innerText = "Your Password is Valid";
+        span[3].style.color = "lime";
+      }
+      else
+      {
+        span[3].innerText = "Invalid Password Number";
+        span[3].style.color = "red"
+      }
+    }
+    conpas.onkeydown=function()
+    {
+      if(pas.value==conpas.value)
+      {
+        span[4].innerText = "Password is Match";
+        span[4].style.color = "lime";
+      }
+      else
+      {
+        span[4].innerText = "Password is not Match";
+        span[4].style.color = "red";
+      }
+    }
+
 </script>
