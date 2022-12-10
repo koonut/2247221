@@ -4,6 +4,58 @@
 <title>Manu</Title>
 <link rel="stylesheet" type="text/css" href="special2.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script>
+  function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + exdays *60 * 1000);
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function checkCookie() {
+    let user = getCookie("username");
+    if (user != "") {
+      alert("Welcome again " + user);
+    } else {
+      user = prompt("Please enter your name:", "");
+      if (user != "" && user != null) {
+        setCookie("username", user, 1);
+      }
+    }
+  }
+  function show() {
+    var value = document.getElementById("demo").value;
+    if (value != "Select Color") {
+      document.bgColor = value;
+      document.cookie = "color=" + value + ";";
+    }
+  }
+  window.onload = function () {
+    if (document.cookie.length != 0) {
+      var a = document.cookie.split("=");
+      document.getElementById("demo").value = a[1];
+      document.bgColor = a[1];
+    }
+  }
+</script>
+<script src="table.js"></script>
 <style>
 body{
       margin:0;
@@ -84,7 +136,7 @@ footer{
 	 </ul>
 </nav>
 </head>
-<body>
+<body onload="checkCookie()" ng-app="Myitem">
 <br><br><br><br>
 <div class="container">
       <div class="gallery">
@@ -106,40 +158,30 @@ Best seller item
 </footer>
 <hr>
 <center>
-<h1>List of items</h1>
+<h1>List of items</h1><br>
 <div class="main">
-<table id="menu">
-  <tr>
-    <th>Items</th>
-    <th>Summary</th>
-    <th>Prices</th>
-  </tr> 
-  <tr>
-    <td>Triple Joint Dog Harness</td>
-	<td>We are Manufacturing and Trader  of Dog Harness, Pet Chews Sticks</td>
-	<td>Rs.295</td>
-  </tr>
-  <tr>
-    <td>Dog Foot Cleaner</td>
-	<td>Comforrable for dogs, Easy to use,Heavy plastic body</td>
-	<td>Rs.230</td>
-  </tr>
-  <tr>
-    <td>Shampoo IiLio Aloevera Shamppoo</td>
-	<td>500 ml size Shamppoo </td>
-	<td>Rs.360</td>
-  </tr>
-  <tr>
-    <td>Dog Nail Cutter</td>
-	<td>use for cutting dog nail</td>
-	<td>Rs.100</td>
-  </tr>
-  <tr>
-    <td>Pgpet Pet Sound Chewing Ball</td>
-	<td>the ball make of rubber</td>
-	<td>Rs.70</td>
-  </tr>
-</table>
+<div ng-controller="itemCtrl">
+  <h3>Rows to Display:<input type="number" step="1" min="0" max="5" ng-model="rowlimit" /></h3>
+  <h3>Search Items:<input type="text" placeholder="Search Items" ng-model="search"></h3>
+  <h3>Enter the Number of characters:<input type="text" ng-model="limit" /></h3>
+  <table>
+    <tr>
+      <th>Items</th>
+      <th>Summary</th>
+      <th>Prices</th>
+    </tr>
+    <tbody>
+      <tr ng-repeat="item in items|limitTo:rowlimit|filter:search">
+        <td>{{item.name|myfilter:limit}}</td>
+        <td>{{item.summary|lowercase}}</td>
+        <td>&#8377;{{item.price|number:0}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
 </div><hr> 
 </center>
 <center>

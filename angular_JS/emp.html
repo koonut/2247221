@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+
+        <script src="emp.js"></script>
+        <link href="test1.css" rel="stylesheet">
+    </head>
+
+    <body ng-app="Myemp">
+        <div ng-controller="empCtrl">
+            Rows to Display:<input type="number" step="1" min="0" max="6" ng-model="rowlimit" /><br><br>
+            Search:<input type="text" placeholder="Search Employee" ng-model="search"><br><br>
+            Enter the Number of characters:<input type="text" ng-model="limit" /><br><br>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Salary(number)</th>
+                    <th>Salary(Currency)</th>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="emp in employees|limitTo:rowlimit|filter:search">
+                        <td>{{emp.name|myfilter:limit}}</td>
+                        <td>{{emp.dob|date:"dd/MM/yyyy"}}</td>
+                        <td>{{emp.gender|lowercase}}</td>
+                        <td>{{emp.salary|number:0}}</td>
+                        <td>&#8377;{{emp.salary|number:0}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </body>
+
+</html>

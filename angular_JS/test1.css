@@ -1,0 +1,14 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+td {
+    border: 1px solid red;
+    padding: 5px;
+}
+
+th {
+    border: 1px solid red;
+    padding: 5px;
+    text-align: left;
+}

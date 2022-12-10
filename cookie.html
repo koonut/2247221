@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Lab6</title>
+        <script>
+            function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays *60 *1000));
+                let expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            function checkCookie() {
+                let user = getCookie("username");
+                if (user != "") {
+                    alert("Welcome again " + user);
+                } else {
+                    user = prompt("Please enter your name:", "");
+                    if (user != "" && user != null) {
+                        setCookie("username", user, 30);
+                    }
+                }
+            }
+            function show() {
+                    var value = document.getElementById("demo").value;
+                    if (value != "Select Color") {
+                        document.bgColor = value;
+                        document.cookie = "color=" + value + ";";
+                    }
+                }
+                window.onload = function () {
+                    if (document.cookie.length != 0) {
+                        var a = document.cookie.split("=");
+                        document.getElementById("demo").value = a[1];
+                        document.bgColor = a[1];
+                    }
+                }
+        </script>
+    </head>
+
+    <body onload="checkCookie()">
+    <select id="demo" onchange="show()">
+        <option value="Select Color">Select Color</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
+    </body>
+
+</html>

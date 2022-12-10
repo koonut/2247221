@@ -1,33 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-
-    <body>
-        <input type="button" value="Set Cookies" onclick="setCookie()">
-        <input type="button" value="Get Cookies" onclick="getCookie()">
-        <script>
-            function setCookie() {
-
-            }
-            function getCookie() {
-                if (document.cookie.length != 0) {
-                    alert(document.cookie);
-                }
-                else {
-                    alert("No cookies");
-                }
-            }
-
-        </script>
-    </body>
-
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,31 +5,37 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Cookie</title>
     </head>
 
     <body>
-        <select id="demo" onchange="show()">
-            <option value="Select Color">Select Color</option>
-            <option value="red">Red</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-        </select>
+        <button type="button" onclick="displayCookies()">Display All Cookies</button>
+        <button type="button" onclick="document.cookie=&quot;firstname=Koonut;expires=Wed, 18 Dec 2026 12:00:00 GMT&quot;">Create Cookie 1</button>
+        <button type="button" onclick="document.cookie=&quot;lastname=Thongchang;expires=Wed, 18 Dec 2026 12:00:00 GMT&quot;">Create Cookie 2</button>
+        <button type="button" onclick="document.cookie=&quot;firstname=;expires=Thu, 01 Jan 1970&quot;">Delete Cookie 1</button>
+        <button type="button" onclick="document.cookie=&quot;lastname=;expires=Thu, 01 Jan 1970&quot;">Delete Cookie 2</button>
         <script>
-            function show() {
-                var value = document.getElementById("demo").value;
-                if (value != "Select Color") {
-                    document.bgColor = value;
-                    document.cookie = "color=" + value + ";";
+            
+                function displayCookies() {
+                    var fname = getCookie("firstname");
+                    if (fname == null) { fname = ""; }
+                    if (fname != "") { fname = "firstname=" + fname; }
+                    var lname = getCookie("lastname");
+                    if (lname == null) { lname = ""; }
+                    if (lname != "") { lname = "lastname=" + lname; }
+                    alert(fname + " " + lname);
                 }
-            }
-            window.onload = function () {
-                if (document.cookie.length != 0) {
-                    var a = document.cookie.split("=");
-                    document.getElementById("demo").value = a[1];
-                    document.bgColor = a[1];
+                function getCookie(name) {
+                    var nameEQ = name + "=";
+                    //alert(document.cookie);
+                    var ca = document.cookie.split(';');
+                    for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') c = c.substring(1);
+                        if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length, c.length);
+                    }
+                    return null;
                 }
-            }
         </script>
     </body>
 
