@@ -1,0 +1,23 @@
+<html ng-app="myapp" ng-controller="myctrl">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+        <script src="spa1.js"></script>
+    </head>
+
+    <body>
+        <table border="1">
+            <tr>
+                <td><a href="#/home">Home</a></td>
+                <td><a href="#/employee">Employee</a></td>
+                <td><a href="#/paygrade">Paygrade</a></td>
+            </tr>
+            <tr>
+                <td colspan="3"><ng-view></ng-view></td>
+            </tr>
+        </table>
+
+    </body>
+
+</html>
