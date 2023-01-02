@@ -18,7 +18,7 @@ angular.module('myapp', ['ngRoute'])
 
     })
     .controller('payctrl', function ($scope, $http) {
-        $http.get('https://bidura.github.io/web_stack_development/paygrade.json')
+        $http.get('https://koonut.github.io/2247221/angular_JS/paygrade.json')
         .success(function (response) {
             $scope.paygrade = response.records;
         })
@@ -32,7 +32,7 @@ angular.module('myapp', ['ngRoute'])
 
     })
     .controller("empctrl", function ($scope, $http) {
-        $http.get('https://bidura.github.io/web_stack_development/employee.json')
+        $http.get('https://koonut.github.io/2247221/angular_JS/employee.json')
             .success(function (response) {
                 $scope.employees = response.records;
             })
