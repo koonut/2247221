@@ -1,0 +1,32 @@
+view3.html<!DOCTYPE html>
+<html>
+
+    <head>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+        <script src="ang1.js"></script>
+    </head>
+
+    <body>
+        <div ng-app="myapp1" ng-controller="myctrl3">
+            <h4>Paygrades</h4>
+            <table cellpadding="2" cellspacing="2" border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>MANAGER ID</th>
+
+
+                </tr>
+                <tr ng-repeat="items in dept">
+                    <td>{{items.id}}</td>
+                    <td>{{items.name}}</td>
+                    <td>{{items.managerid}}</td>
+                </tr>
+
+            </table>
+        </div>
+    </body>
+
+</html>

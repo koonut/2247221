@@ -1,0 +1,19 @@
+{
+    "people": [
+        {
+            "id": 1,
+            "name": "Srijon",
+            "age": 21
+        },
+        {
+            "id": 2,
+            "name": "Seezone_baka",
+            "age": 21
+        },
+        {
+            "id": 5,
+            "name": "koonut",
+            "age": 23
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{"dept":[
+    {"id":1,"name":"HR","managerid":444},
+    {"id":2,"name":"IT","managerid":441},
+    {"id":3,"name":"RETAIL","managerid":443}
+   
+]}

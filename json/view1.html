@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+  
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+    <script src="ang1.js"></script>
+</head>
+<body >
+    <div ng-app="myapp1" ng-controller="myctrl1">
+        <h4>Employees</h4>
+        <table cellpadding="2" cellspacing="2" border="1">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+               
+            </tr>
+            <tr ng-repeat="item in names">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+            </tr>
+            
+                </table> 
+            </div>
+
+                            
+</body>
+</html>
