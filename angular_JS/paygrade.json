@@ -1,24 +1,24 @@
 {
     "records": [
         {
-            "id": "grade1",
-            "basic": 5000.00,
-            "hra": 100.0
+            "id": "aa252",
+            "item": "Dog Foot Cleaner",
+            "price": 230.0
         },
         {
-            "id": "grade2",
-            "basic": 6000.00,
-            "hra": 80.0
+            "id": "ab735",
+            "item": "Shampoo IiLio Aloevera",
+            "price": 800.0
         },
         {
-            "id": "grade3",
-            "basic": 5400.00,
-            "hra": 200.0
+            "id": "ba456",
+            "item": "Dog Harness",
+            "price": 200.0
         },
         {
-            "id": "grade4",
-            "basic": 7000.00,
-            "hra": 50.0
+            "id": "xa7ff",
+            "item": "Dog Nail Cutter",
+            "price": 250.0
         }
     ]
 }
