@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+}
+
+#tableSection {
+    font-size: 1.1em;
+}
+
+#tableSection table {
+    background-color: white;
+}
+
+#tableSection table, #tableSection td, #tableSection th{
+    border: 1px solid;
+}
+
+#tableSection th{
+    cursor: pointer;
+    color: white;
+    border-color: black;
+}

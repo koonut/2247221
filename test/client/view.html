@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inforsys spring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div ng-controller="MyController">
+        <section id="tableSection" class="container mt-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="bg-primary">
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="data in datas">
+                        <td scope="row">{{data.Emp_ID}}</td>
+                        <td>{{data.Emp_name}}</td>
+                        <td>{{data.Emp_Designation}}</td>
+                        <td>{{data.Emp_department}}</td>
+                        <td>{{data.Emp_salary}}</td>
+                        <td>{{data.Emp_location}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEAN app</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js" integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <!-- Angular App -->
+    <div ng-app="myApp" class="mt-4 container">
+        <a href="#/"><button type="button" class="ps-4 pe-4 me-2 btn btn-outline-primary">View</button></a>
+        <a href="#create"><button type="button" class="ps-4 pe-4 me-2 btn btn-outline-success">Create</button></a>
+        <a href="#delete"><button type="button" class="ps-4 pe-4 me-2 btn btn-outline-danger">Delete</button></a>
+        <a href="#update"><button type="button" class="ps-4 pe-4 me-2 btn btn-outline-secondary">Update</button></a>
+        <a href="#search"><button type="button" class="ps-4 pe-4 me-2 btn btn-outline-info">Search</button></a> <br>
+        <ng-view></ng-view>
+    </div>
+    <!-- Angular App -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

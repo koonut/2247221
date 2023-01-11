@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+
+<body>
+    <br> <br>
+    <div class="container">
+        <form ng-submit="createEntry()">
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="Emp_ID" class="form-label">Id</label>
+                        <input type="number" ng-model="Emp_ID" class="form-control" required>
+                    </div>
+                    <div class="offset-md-1 col-md-7">
+                        <label for="Emp_name" class="form-label">Name</label>
+                        <input type="text" ng-model="Emp_name" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="Emp_Salary" class="form-label">Salary</label>
+                        <input type="number" ng-model="Emp_salary" class="form-control" required>
+                    </div>
+                    <div class="offset-md-1 col-md-7">
+                        <label for="Emp_designation" class="form-label">Designation</label>
+                        <input type="text" ng-model="Emp_Designation" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="Emp_Location" class="form-label">Location</label>
+                        <input type="text" ng-model="Emp_location" class="form-control" required>
+                    </div>
+                    <div class="offset-md-1 col-md-7">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Department</label>
+                            <select class="form-select form-select-lg" ng-model="Emp_department" id="" required>
+                                <option selected disabled value="">Select one</option>
+                                <option value="Development">Development</option>
+                                <option value="Testing">Testing</option>
+                                <option value="Advertising">Advertising</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 d-flex justify-content-center">
+                <input type="submit" value="Create" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
