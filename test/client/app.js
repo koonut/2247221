@@ -36,17 +36,17 @@
             })
 
             $scope.getId = function () {
-                var selectedId = $scope.id
+                var selectedId = $scope.Emp_ID
                 console.log(selectedId)
-                $scope.Emp_namename = selectedId['Emp_name']
+                $scope.Emp_name = selectedId['Emp_name']
                 $scope.Emp_Designation = selectedId['Emp_Designation']
-                $scope.Emp_departmen = selectedId['Emp_department']
+                $scope.Emp_department = selectedId['Emp_department']
                 $scope.Emp_salary = selectedId['Emp_salary']
                 $scope.Emp_location = selectedId['Emp_location']
             }
 
             $scope.updateEntry = function () {
-                var newData =  "{\"Emp_ID\":\"" + $scope.id[id] + "\", \"Emp_name\":\"" + $scope.Emp_name + "\", \"Emp_Designation\":\"" + $scope.Emp_Designation + "\", \"Emp_department\":\"" + $scope.Emp_department + "\", \"Emp_salary\":\"" + $scope.Emp_salary + "\", \"Emp_location\":\"" + $scope.Emp_location + "\"}";
+                var newData =  "{\"Emp_ID\":\"" + $scope.Emp_ID[id] + "\", \"Emp_name\":\"" + $scope.Emp_name + "\", \"Emp_Designation\":\"" + $scope.Emp_Designation + "\", \"Emp_department\":\"" + $scope.Emp_department + "\", \"Emp_salary\":\"" + $scope.Emp_salary + "\", \"Emp_location\":\"" + $scope.Emp_location + "\"}";
 
                 fetch('http://localhost:3000/update', {
                     method: "POST",
@@ -88,7 +88,7 @@
                 $scope.datas = response.data
             })
             $scope.deleteEntry = function () {
-                var delJson = { delID: $scope.del.id }
+                var delJson = { delID: $scope.del.Emp_ID }
                 var jsonObj = JSON.stringify(delJson)
 
                 fetch('http://localhost:3000/delete', {
